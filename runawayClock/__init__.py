@@ -1,10 +1,11 @@
 #!/usr/bin/env /usr/bin/python
 
 
-import sys.argv
-from CF.SUBM_D import _00_OS as CF_OS
 from CF.CLASSES_D import _01_PKL_C as CF_PKL
-from importlib import import_module
+from CF.SUBM_D import _00_OS as CF_OS
+from sys import argv
+import importlib
+
 
 __all__ = []
 
@@ -80,8 +81,9 @@ def moduleExists(moduleToCheck_):
 
 def callModule(moduleToCall_):
   global DS_INIT
-  _moduleName_ = f"""CLOCKS_D.{moduleToCall_}"""
-  _myModule_ = __import__(moduleName)
+  _pack_ = "CLOCKS_D"
+  CLOCKS_D = importlib.import_module(_pack_)
+  _myModule_ = importlib.import_module(_pack_ + '.' + moduleToCall_)
   DS_INIT["K_LAST"] = moduleToCall_
   # 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱
   while True:
@@ -115,7 +117,7 @@ def doInit():
   # ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1
   # 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱
   with CF_PKL.PKL_C(PKL_NAME, DS_INIT):
-
+    callModule(THIS_MODULE)
 
 
 doInit()

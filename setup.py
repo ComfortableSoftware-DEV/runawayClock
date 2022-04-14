@@ -17,29 +17,20 @@ setup(
   author="GaelicGrime",
   author_email="will.angus.blaylock@gmail.com",
   license="GPLv3",
-  name="**PACKAGE_NAME**",
+  name="runawayClock",
   url="https://github.com/ComfortableSoftware/commonFunctions_py",
-  version="0.8.0",
-  package_dir={"**PACKAGE_NAME**": "**PACKAGE_NAME**"},
+  version="0.2.0",
+  package_dir={"runawayClock": "runawayClock"},
   package_data={
-      "**PACKAGE_NAME**": [
+      "runawayClock": [
           "../doc/*",
+          "BUTTONS_D/*",
+          "CLOCKS_D/*",
       ]
   },
-  packages=["**PACKAGE_NAME**"],
+  packages=["runawayClock"],
   install_requires=[
   ],
   extras_require={
-      "hashing": ["hashlib"],
-      "pickling": ["pickle"],
-      "timestuff": [
-          "datedelta",
-          "datetime",
-          "dateutil",
-          "time",
-      ],
-      "debugging": [
-          "inspect",
-      ],
   }
 )

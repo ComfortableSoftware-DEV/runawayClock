@@ -35,9 +35,10 @@
     closeDeletedFileTabs: true
     disabledPackages: [
       "archive-view"
-      "autosave"
+      "atom-html-preview"
       "buildium"
       "Chromo-Color-Previews"
+      "ide-python"
       "image-view"
       "language-arduino"
       "language-c"
@@ -49,6 +50,7 @@
       "language-java"
       "language-javascript"
       "language-less"
+      "language-lsl"
       "language-lua"
       "language-make"
       "language-mustache"
@@ -67,18 +69,16 @@
       "language-typescript"
       "language-xml"
       "language-yaml"
+      "linter-pylint"
       "minimap"
       "open-on-github"
       "package-control"
       "package-generator"
+      "rst-preview-pandoc"
       "script"
       "spell-check"
       "split-diff"
-      "language-lsl"
-      "linter-pylint"
-      "ide-python"
-      "atom-html-preview"
-      "rst-preview-pandoc"
+      "wrapperizer"
     ]
     followSymlinks: false
     ignoredNames: [

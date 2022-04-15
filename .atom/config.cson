@@ -114,6 +114,7 @@
     useTreeSitterParsers: false
   "custom-folds":
     areRegionsFoldedOnLoad: true
+    areRegionsHighlighted: true
     postfix_0: "fold here ⟰1⟰1⟰1"
     postfix_1: "fold here ⟰2⟰2⟰2"
     postfix_2: "fold here ⟰3⟰3⟰3"
@@ -225,12 +226,12 @@
   "nyan-indent":
     color: "purple"
     customColors:
-      "0": "#990000"
-      "1": "#990066"
-      "2": "#995566"
-      "3": "#996699"
-      "4": "#880088"
-    opacity: 70
+      "0": "#dd99ff"
+      "1": "#b447eb"
+      "2": "#7a29a3"
+      "3": "#3a1f47"
+      "4": "#1c141f"
+    opacity: 100
     useCustomColors: true
   "package-generator":
     createInDevMode: true

@@ -19,7 +19,7 @@ setup(
   license="GPLv3",
   name="runawayClock",
   url="https://github.com/ComfortableSoftware/commonFunctions_py",
-  version="0.9.2-1",
+  version="0.9.3",
   package_dir={"runawayClock": "runawayClock"},
   package_data={
       "runawayClock": [

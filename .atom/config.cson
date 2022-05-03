@@ -68,7 +68,6 @@
       "language-typescript"
       "language-xml"
       "language-yaml"
-      "linter-pylint"
       "minimap"
       "open-on-github"
       "package-control"
@@ -159,7 +158,6 @@
   kite:
     loggingLevel: "debug"
     showWelcomeNotificationOnStartup: false
-  "linter-pylint": {}
   "linter-spell":
     defaultLanguages: [
       "en es_any es_mx"

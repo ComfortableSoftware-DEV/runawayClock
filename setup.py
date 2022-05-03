@@ -34,5 +34,6 @@ setup(
       "PySimpleGUI",
   ],
   extras_require={
-  }
+  },
+  scripts=["scripts/runawayClock"],
 )

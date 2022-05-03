@@ -1,0 +1,38 @@
+[1]
+Description=Window settings for clock only
+above=false
+clientmachine=localhost
+desktops=\\0
+desktopsrule=2
+maximizehoriz=true
+maximizevert=true
+noborder=true
+noborderrule=2
+skippager=true
+skippagerrule=2
+title=CLOCK ONLY
+type=16
+wmclass=!toplevel clock only
+wmclasscomplete=true
+wmclassmatch=2
+
+
+
+qdbus org.kde.KWin /KWin reconfigure
+
+cd /usr/share/plasma/plasmoids/
+mkdir -p ~/.local/share/plasma/plasmoids
+cp -r /usr/share/plasma/plasmoids/org.kde.plasma.analogclock/ ~/.local/share/plasma/plasmoids/
+cd ~/.local/share/plasma/plasmoids/
+mv ./org.kde.plasma.analogclock ./com.github.zren.myanalogclock
+cd ./com.github.zren.myanalogclock
+kwriteconfig5 --file="$PWD/metadata.desktop" --group="Desktop Entry" --key="X-KDE-PluginInfo-Name" "com.github.zren.myanalogclock"
+kwriteconfig5 --file="$PWD/metadata.desktop" --group="Desktop Entry" --key="Name" "My Analog Clock"
+sed -i '/^Name\[/ d' ./metadata.desktop
+sed -i '/^Comment\[/ d' ./metadata.desktop
+rm ./metadata.json
+plasmawindowed com.github.zren.myanalogclock
+
+
+kreadconfig5 --file ~/.config/kwinrulesrc --group 1 --key "above"
+false

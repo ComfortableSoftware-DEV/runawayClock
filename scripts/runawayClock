@@ -1,4 +1,4 @@
-#!/usr/bin/env /usr/bin/zsh
+#!/usr/bin/env /usr/bin/sh
 
 
 /usr/bin/python -m runawayClock

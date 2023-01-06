@@ -24,7 +24,7 @@ CURRENT_WINDOW_SIZE = (0, 0)
 CURRENTLY_OVER = False
 DEFAULT_WINDOW_LOCATION = (1500, -DEFAULT_Y_MARGIN)
 FONT_DEFAULT = "Source Code Pro"
-FONT_SIZE = 30
+FONT_SIZE = 25
 HIDE = True
 HIDE_LENGTH = 3.0
 HIDE_TIMER = 0.0
@@ -130,6 +130,8 @@ def checkMouse():
       CURRENT_MOUSE_STATUS, \
       CURRENT_WINDOW_LOCATION
   # fold here ⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1
+  CURRENT_MOUSE_STATUS = CF_SCN.POSITION_NONE
+  return
   _tempWindowLocation_ = MAINFRAME.CurrentLocation()
   _tempMouseLocation_ = CF_SCN.getMousePos()
   if (

@@ -1,0 +1,7 @@
+CF @ file:///rcr/0-sourceCode/0-development/0-python/CF
+datedelta==1.4
+PySimpleGUI==4.60.4
+python-dateutil==2.8.2
+six==1.16.0
+urllib3==1.26.12
+xlib==0.21

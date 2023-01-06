@@ -1,0 +1,19 @@
+× runawayClock.service - load the runawayClock
+     Loaded: loaded (/etc/xdg/systemd/user/runawayClock.service; static)
+     Active: failed (Result: exit-code) since Mon 2022-11-07 07:47:17 MST; 6h ago
+   Duration: 14h 40min 40.439s
+TriggeredBy: ● runawayClock.timer
+    Process: 987810 ExecStart=/usr/bin/python -m runawayClock (code=exited, status=1/FAILURE)
+   Main PID: 987810 (code=exited, status=1/FAILURE)
+        CPU: 14h 30min 893ms
+
+Nov 07 07:41:55 willdesk python[987810]:   File "/home/will/.local/lib/python3.10/site-packages/Xlib/display.py", line 89, in __init__
+Nov 07 07:41:55 willdesk python[987810]:     self.display = _BaseDisplay(display)
+Nov 07 07:41:55 willdesk python[987810]:   File "/home/will/.local/lib/python3.10/site-packages/Xlib/display.py", line 71, in __init__
+Nov 07 07:41:55 willdesk python[987810]:     protocol_display.Display.__init__(self, *args, **keys)
+Nov 07 07:41:55 willdesk python[987810]:   File "/home/will/.local/lib/python3.10/site-packages/Xlib/protocol/display.py", line 167, in __init__
+Nov 07 07:41:56 willdesk python[987810]:     raise error.DisplayConnectionError(self.display_name, r.reason)
+Nov 07 07:41:56 willdesk python[987810]: Xlib.error.DisplayConnectionError: Can't connect to display ":0": b'Maximum number of clients reached'
+Nov 07 07:47:17 willdesk systemd[104265]: runawayClock.service: Main process exited, code=exited, status=1/FAILURE
+Nov 07 07:47:17 willdesk systemd[104265]: runawayClock.service: Failed with result 'exit-code'.
+Nov 07 07:47:17 willdesk systemd[104265]: runawayClock.service: Consumed 14h 30min 893ms CPU time.

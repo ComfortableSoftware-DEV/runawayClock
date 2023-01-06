@@ -1,4 +1,9 @@
-#!/usr/bin/env /usr/bin/sh
+#!/usr/bin/env /usr/bin/zsh
 
 
-/usr/bin/python -m runawayClock
+MY_DATE=$(date +%Y%m%d_%H%M%S)
+MY_LOGFILE="/storage/logs/runawayClock/$MY_DATE.RC.txt"
+python -m runawayClock |& tee -a "$MY_LOGFILE"
+
+
+#

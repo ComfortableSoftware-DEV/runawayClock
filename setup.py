@@ -1,44 +1,26 @@
+import pathlib
 
+from setuptools import find_packages, setup
 
-#
-#
-# * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
-# * start of CF.setup.py
-# * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
-#
-#
+# The directory containing this file
+HERE = pathlib.Path(__file__).parent
 
-
-from setuptools import find_packages
-from setuptools import setup
-
+# The text of the README file
+README = (HERE / "README.md").read_text()
 
 setup(
-  author="GaelicGrime",
-  author_email="will.angus.blaylock@gmail.com",
-  license="GPLv3",
-  name="runawayClock",
-  url="https://github.com/ComfortableSoftware/commonFunctions_py",
-  version="0.9.3-4",
-  package_dir={"runawayClock": "runawayClock"},
-  package_data={
-      "runawayClock": [
-          "../doc/*",
-          "BUTTONS_D/*",
-          "CLOCKS_D/*",
-      ]
-  },
-  packages=["runawayClock"],
-#  prefix="/home/will/.local",
-  install_requires=[
-      "CF",
-      "PySimpleGUI",
-  ],
-  extras_require={
-  },
-  scripts=["scripts/runawayClock"],
-#  entry_points = """
-#      [console_scripts]
-#      runawayClock=__main__:cli
-#  """,
-)
+    name="runawayClock",
+    version="0.2.4",
+    author="GaelicGrime",
+    author_email="will.angus.blaylock@gmail.com",
+    url="https://github.com/ComfortableSoftware/runawayClock",
+    description="Simple on screen clock.",
+    long_description=README,
+    long_description_content_type="text/markdown",
+    packages=find_packages(exclude=("tests",)),
+    install_requires=[
+        "PySimpleGUI"
+      ],
+    # classifiers=[],
+    python_requires=">=3.2",
+  )

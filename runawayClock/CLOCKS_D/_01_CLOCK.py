@@ -1,11 +1,12 @@
+#!/usr/bin/env /usr/bin/python
 
 
 import PySimpleGUI as SG
-from CF.SUBM_D import (
+from CSCF.SUBM_D import (
     _00_TIME_DT as CF_DT,
     _00_SCREEN as CF_SCN,
     )
-from CF.CONST_D import _00_COLORS as CF_COL
+from CSCF.CONST_D import _00_COLORS as CF_COL
 
 
 DEFAULT_X_MARGIN = 0
@@ -51,7 +52,8 @@ RIGHT_CLICK_MENU = [
     "RUNAWAY",
     ]
 RIGHT_CLICK_MENU.sort()
-RIGHT_CLICK_MENU = RIGHT_CLICK_MENU + RIGHT_CLICK_ALWAYS_MENU
+# RIGHT_CLICK_MENU = RIGHT_CLICK_MENU + RIGHT_CLICK_ALWAYS_MENU
+RIGHT_CLICK_MENU = RIGHT_CLICK_ALWAYS_MENU
 
 
 FONTSZ_CLOCKS_TIME_S_CLOCK = (
@@ -399,6 +401,8 @@ def CLOCK():
   _thisTimeHMS_ = CF_DT.nowStrHMS()
   _today_ = CF_DT.todayStrFull()
   MAINFRAME = SG.Window(**WINDOW_MAIN).finalize()
+  MAINFRAME.bind("<Enter>", "__OVER__")
+  MAINFRAME.bind("<Leave>", "__NOT_OVER__")
   MAINFRAME.Element("__clock__").SetTooltip(_today_)
   CURRENT_WINDOW_SIZE = MAINFRAME.Size
   CURRENT_SCREEN_SIZE = MAINFRAME.GetScreenDimensions()
@@ -431,6 +435,7 @@ def CLOCK():
     hideWindow()
     CURRENT_WINDOW_LOCATION = MAINFRAME.CurrentLocation()
     _event_, _values_ = readWindow()
+    # print(f"""_event_ '{_event_}'   _values_ {_values_}""")
     # 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱
     if (
         (_event_ == "QUIT")

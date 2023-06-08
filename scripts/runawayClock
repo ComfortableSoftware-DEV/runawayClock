@@ -3,7 +3,14 @@
 
 MY_DATE=$(date +%Y%m%d_%H%M%S)
 MY_LOGFILE="/storage/logs/runawayClock/$MY_DATE.RC.txt"
-python -m runawayClock |& tee -a "$MY_LOGFILE"
+
+if [[ "$1" == "-p" ]]
+then
+  python -m runawayClock |& tee -a "$MY_LOGFILE"
+else
+  ~/.local/bin/runawayClock.bin
+fi
+
 
 
 #

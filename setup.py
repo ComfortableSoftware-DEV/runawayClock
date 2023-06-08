@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="runawayClock",
-    version="0.2.4",
+    version="0.2.5",
     author="GaelicGrime",
     author_email="will.angus.blaylock@gmail.com",
     url="https://github.com/ComfortableSoftware/runawayClock",
